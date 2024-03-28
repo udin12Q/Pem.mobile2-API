@@ -22,7 +22,7 @@ class RegisterResponse {
 
   static Future<RegisterResponse> connectToApi(String name, String job) async {
     var apiUrl = Uri.parse("https://reqres.in/api/users");
-    var apiResult = await http.post(apiUrl, Body: {"name": name, "job": job});
+    var apiResult = await http.post(apiUrl, body: {"name": name, "job": job});
     var jsonObject = json.decode(apiResult.body);
 
     return RegisterResponse.createRegisterResponse(jsonObject);
