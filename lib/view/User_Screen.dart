@@ -12,7 +12,7 @@ class _UserScreenState extends State<UserScreen> {
   @override
   void initState() {
     print('Init State');
-    UserResponse.getUserList('1').then((value) {
+    UserResponse.getUsersList('1').then((value) {
       userList = value;
       setState(() {});
       super.initState();

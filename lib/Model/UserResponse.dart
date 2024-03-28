@@ -2,8 +2,8 @@ import 'dart:convert';
 
 class UserResponse {
   String id;
-  String name;
   String email;
+  String name;
   String avatar;
 
   UserResponse(
@@ -15,12 +15,12 @@ class UserResponse {
   factory UserResponse.createUserResponse(Map<String, dynamic> object) {
     return UserResponse(
         id: object['id'].toString(),
-        name: object['first_name'] + " " + object['last_name'],
         email: object['email'],
+        name: object['first_name'] + " " + object['last_name'],
         avatar: object['avatar']);
   }
 
-  static Future<List<UserResponse>> getUserList(String page) async {
+  static Future<List<UserResponse>> getUsersList(String page) async {
     var apiUrl = Uri.parse("https://reqres.in/api/users?page=" + page);
     var apiResult = await http.get(apiUrl);
 
